@@ -1,0 +1,21 @@
+CustomerID,FirstName,LastName,Username,Password,CustomerType,CompanyName,TaxNumber
+1,Ali,Veli,aliveli,12345,Standard,,
+2,Ayse,Yilmaz,aysey,abcde,Standard,,
+3,Mehmet,Kaya,mkaya,pass123,Standard,,
+4,Fatma,Demir,fdemir,98765,Premium,,
+5,Ahmet,Can,ahmetc,can123,Standard,,
+6,Kerem,Ozkan,kozk,firm123,Corporate,TechnoSoft A.S.,1029384756
+7,Selin,Arslan,sarslan,corp56,Corporate,Arslan Holding,5566778899
+8,Murat,Aksoy,maksoy,pass890,Standard,,
+9,Elif,Korkmaz,ekorkmaz,elif11,Premium,,
+10,Yusuf,Ergin,yergin,yusuf22,Standard,,
+11,Deniz,Kara,dkara,dk2025,Corporate,Kara Bilisim Ltd.,3344556677
+12,Seda,Polat,sedap,spolat77,Standard,,
+13,Okan,Yildiz,oyildiz,okan33,Corporate,Yildiz Global A.S.,7788990011
+14,Berna,Sarac,bsarac,bb2024,Premium,,
+15,Hakan,Tunc,htunc,hak123,Standard,,
+16,Gizem,Sevinc,gsevinc,gs2023,Corporate,Sevinc Medya,1122334455
+17,Ozge,Erman,oerman,oz12,Standard,,
+18,Cemal,Toprak,ctoprak,ctp55,Standard,,
+19,Ece,Alp,ealp,ece77,Premium,,
+20,Tahir,Dogru,tdogru,tt9900,Corporate,Dogru Holding,6677889900
