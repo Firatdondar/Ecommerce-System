@@ -1,14 +1,96 @@
-# E-Commerce Object-Oriented Programming Project
+# 🛒 E-Commerce Console System (C++17 OOP)
 
-This project is a C++ Object-Oriented Programming (OOP) console application that simulates an e-commerce platform. It features user authentication, a product catalog across various categories, shopping cart management, and a checkout system with discount/shipping logic based on customer tiers.
+![C++17](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=c%2B%2B&logoColor=white)
+![CMake](https://img.shields.io/badge/CMake-3.10%2B-064F8C?logo=cmake&logoColor=white)
+![Paradigm](https://img.shields.io/badge/Paradigm-OOP%20%26%20Polymorphism-orange)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-## Features
-- **Polymorphism & Inheritance:** Demonstrates OOP concepts with base `Product` and `Customer` classes branching into specialized sub-classes.
-- **File I/O:** Loads customer accounts dynamically from a text file (`customers.txt`).
-- **Cart Management:** Add to cart, remove items, calculate subtotals, and simulate stock deduction.
-- **Checkout Calculations:** Calculates final price using shipping costs and customer-specific discount rates (Standard, Premium, Corporate).
+A modular **Object-Oriented Programming (OOP)** e-commerce platform built in **C++17**. It features multi-tier customer authentication, a polymorphic product catalog, interactive shopping cart management, real-time stock tracking, and automated discount/shipping calculation.
 
-## How to Run
-1. Ensure `customers.txt` is in the same directory as the executable.
-2. Build the project using CMake or your preferred C++ compiler (requires C++17).
-3. Run the executable and log in using the credentials from `customers.txt` (e.g., Username: `aliveli`, Password: `12345`).
+---
+
+## ✨ Key Features
+
+- **Polymorphic Product Hierarchy:** Abstract base class `Product` extended by specialized domain classes (`Book`, `Electronic`, `Clothing`) with category-specific attributes (author/pages, warranty/brand, size/fabric).
+- **Tiered Customer Pricing Engine:** Base `Customer` class with derived `StandardCustomer`, `PremiumCustomer`, and `CorporateCustomer` tiers offering dynamic discount rates and free-shipping thresholds.
+- **Interactive Shopping Cart:** Supports adding/removing products, stock validation, quantity updates, and itemized receipt generation.
+- **Persistent Account Loading:** Parses customer credentials, balances, and membership tiers from `data/customers.txt`.
+
+---
+
+## 🏗️ Class Architecture
+
+```mermaid
+classDiagram
+    class Product {
+        <<abstract>>
+        #int id
+        #string name
+        #double price
+        #int stock
+        +displayInfo()* void
+    }
+    Product <|-- Book
+    Product <|-- Electronic
+    Product <|-- Clothing
+
+    class Customer {
+        <<abstract>>
+        #string username
+        #string password
+        #double balance
+        +getDiscountRate()* double
+        +getShippingFee(double subtotal)* double
+    }
+    Customer <|-- StandardCustomer
+    Customer <|-- PremiumCustomer
+    Customer <|-- CorporateCustomer
+```
+
+---
+
+## 🗂️ Project Structure
+
+```text
+Ecommerce-System/
+├── data/
+│   └── customers.txt        # Pre-configured customer accounts & tiers
+├── include/
+│   ├── Cart.h               # Shopping cart & checkout calculation logic
+│   ├── Customer.h           # Customer hierarchy & discount rules
+│   └── Product.h            # Product hierarchy & catalog items
+├── src/
+│   └── main.cpp             # Interactive CLI menu & authentication loop
+├── CMakeLists.txt           # Cross-platform CMake build configuration
+├── LICENSE                  # MIT License
+└── README.md                # Project documentation
+```
+
+---
+
+## 🚀 Getting Started
+
+### Build with CMake
+```bash
+git clone https://github.com/Firatdondar/Ecommerce-System.git
+cd Ecommerce-System
+mkdir build && cd build
+cmake ..
+cmake --build .
+```
+
+### Run the Application
+```bash
+./ECommerceSystem
+```
+
+### Demo Login Credentials (`data/customers.txt`)
+| Username | Password | Customer Tier |
+| :--- | :--- | :--- |
+| `aliveli` | `12345` | Standard / Premium / Corporate |
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
