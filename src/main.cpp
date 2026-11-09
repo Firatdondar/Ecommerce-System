@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
+#include <iomanip>
 
 #include "Product.h"
 #include "Customer.h"
@@ -57,7 +58,10 @@ void loadProducts() {
 
 // Parsing customers.txt and creating respective objects.
 void loadCustomers() {
-    ifstream file("customers.txt");
+    ifstream file("data/customers.txt");
+    if (!file.is_open()) {
+        file.open("customers.txt");
+    }
     if (!file.is_open()) {
         cout << "ERROR: customers.txt file could not be opened!" << endl;
         return;
